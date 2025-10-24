@@ -1,4 +1,16 @@
 #!/usr/bin/env bash
+
+PASSWORD="ballvpn"
+read -sp "Enter password: " input
+echo ""
+if [ "$input" != "$PASSWORD" ]; then
+  echo -e "\e[91m❌ Incorrect password! Access denied.\e[0m"
+  exit 1
+fi
+
+echo -e "\e[92m✅ Access granted. Running setup...\e[0m"
+sleep 1
+clear
 # ballvpn_nat.sh - BallVPN / Looktow VPN NAT setup (idempotent)
 # Features:
 #  - Keep only one REDIRECT: UDP 53 -> 5300
